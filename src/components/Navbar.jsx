@@ -10,7 +10,7 @@ const Navbar = () => {
     const { t } = useTranslation();
 
     return (
-        <div className='absolute w-full'>
+        <div className='fixed top-0 left-0 w-full z-50'>
             <div className='hidden md:block'>
                 <ul className='hidden md:flex p-4 justify-center md:gap-20 glass-bg fixed top-0 left-0 w-full z-50'>
                     <li className='uppercase text-sm cursor-pointer'>
@@ -38,14 +38,14 @@ const Navbar = () => {
             <div>
                 <motion.img onClick={() => {setActive(!active), window.scrollTo({ top: 0, behavior: 'smooth' })}} className='flex md:hidden fixed right-0 m-4 h-10 w-10 rotate-animate cursor-pointer z-50 brightness-150 hover:brightness-200 transition-all' src={punk1} alt="" />
                 <motion.div initial={{ scale: 0 }} animate={active ? { scale: [0, 50, 100, 150, 200], transition: { duration: 3 } } : { scale: [200, 150, 100, 50, 0], transition: { duration: 0.5 } }}
-                    exit={{ scale: 0 }} className='flex md:hidden h-10 w-10 bg-n-8 opacity-85 absolute right-0 m-4 rounded-full'>
+                    exit={{ scale: 0 }} className='flex md:hidden h-10 w-10 bg-n-8 opacity-95 absolute right-0 m-4 rounded-full'>
                 </motion.div>
             </div>
             <motion.div
                 initial={{ opacity: 0, y: -0 }}
                 animate={active ? { opacity: 1, y: 200, transition: { duration: 1 } } : { opacity: 0, y: -50, transition: { duration: 0.5 } }}
-                className='block md:hidden'>
-                <ul className={`flex flex-col transition-all justify-center items-center h-full gap-10 w-full z-40`}>
+                className='block md:hidden z-[999]'>
+                <ul className={`flex flex-col transition-all justify-center items-center h-full gap-10 w-full`}>
                     <li onClick={() => setActive(!active)} className='uppercase text-sm cursor-pointer'>
                         <a href="#">
                             <GlitchBtn text={t("SERVICES")} />
