@@ -1,8 +1,18 @@
 import { useEffect, useState } from "react";
 import { MouseParallax } from "react-just-parallax";
 import { motion } from "framer-motion";
+import { punk1 } from '../assets/index'
 
-const Rings = () => {
+export const Gradient = () => {
+    return (
+        <>
+            <div className="relative z-1 h-6 mx-2.5 bg-n-11 shadow-xl rounded-b-[1.25rem] lg:h-6 lg:mx-8" />
+            <div className="relative z-1 h-6 mx-6 bg-n-11/70 shadow-xl rounded-b-[1.25rem] lg:h-6 lg:mx-20" />
+        </>
+    );
+};
+
+const Rings = ({ parallaxRef }) => {
     return (
         <>
             <motion.div
@@ -20,7 +30,14 @@ const Rings = () => {
             <motion.div
                 animate={{ scale: [1.0, 1.2, 1.0] }}
                 transition={{ duration: 60, repeat: Infinity }}
-                className="absolute top-[430px] left-[430px] w-[25.125rem] aspect-square border border-color-1/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
+                className="brightness-150 absolute top-[430px] left-[430px] w-[25.125rem] aspect-square border border-color-1/90 rounded-full -translate-x-1/2 -translate-y-1/2" />
+            <MouseParallax strength={0.02} parallaxContainerRef={parallaxRef}>
+
+                <motion.img src={punk1}
+                    animate={{ scale: [1.0, 1.2, 1.0], rotate: [0, 180, 0] }}
+                    transition={{ duration: 60, repeat: Infinity }}
+                    className="absolute z-0 top-[500px] opacity-70 brightness-125 left-[510px] w-[15.125rem]" />
+            </MouseParallax>
         </>
     );
 };
@@ -41,37 +58,37 @@ export const BackgroundCircles = ({ parallaxRef }) => {
                 <MouseParallax strength={0.07} parallaxContainerRef={parallaxRef}>
 
                     <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom rotate-[46deg]">
-                        <div
+                        <motion.div animate={{ translateY: [0, 20, 0] }} transition={{ duration: 20, repeat: Infinity }}
                             className={`w-2 h-2 -ml-1 -mt-36 bg-gradient-to-b from-[#7f5b8d] to-[#201522] rounded-full transition-transform duration-500 ease-out ${mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                         />
                     </div>
 
                     <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom -rotate-[56deg]">
-                        <div
+                        <motion.div animate={{ translateY: [0, 50, 0] }} transition={{ duration: 20, repeat: Infinity }}
                             className={`w-4 h-4 -ml-1 -mt-32 bg-gradient-to-b from-[#c2b0d6] to-[#1A1A32] rounded-full transition-transform duration-500 ease-out ${mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                         />
                     </div>
 
                     <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom rotate-[54deg]">
-                        <div
+                        <motion.div animate={{ translateY: [0, 5, 0] }} transition={{ duration: 20, repeat: Infinity }}
                             className={`hidden w-4 h-4 -ml-1 mt-[12.9rem] bg-gradient-to-b from-[#B9AEDF] to-[#1A1A32] rounded-full xl:block transit transition-transform duration-500 ease-out ${mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                         />
                     </div>
 
                     <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom -rotate-[65deg]">
-                        <div
+                        <motion.div animate={{ translateY: [0, 70, 0] }} transition={{ duration: 20, repeat: Infinity }}
                             className={`w-3 h-3 -ml-1.5 mt-52 bg-gradient-to-b from-[#928aad] to-[#1A1A32] rounded-full transition-transform duration-500 ease-out ${mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                         />
                     </div>
 
                     <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom -rotate-[85deg]">
-                        <div
+                        <motion.div animate={{ translateY: [0, 180, 0] }} transition={{ duration: 20, repeat: Infinity }}
                             className={`w-6 h-6 -ml-3 -mt-3 bg-gradient-to-b from-[#e981d8] to-[#1A1A32] rounded-full transition-transform duration-500 ease-out ${mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                         />
                     </div>
 
                     <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom rotate-[70deg]">
-                        <div
+                        <motion.div animate={{ translateY: [0, 30, 0] }} transition={{ duration: 20, repeat: Infinity }}
                             className={`w-6 h-6 -ml-3 -mt-3 bg-gradient-to-b from-[#f369be] to-[#1A1A32] rounded-full transition-transform duration-500 ease-out ${mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                         />
                     </div>
