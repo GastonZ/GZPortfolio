@@ -7,7 +7,7 @@ import About from './components/About';
 function App() {
 
   return (
-    <div className='min-h-screen bg-n-7'>
+    <div className='bg-n-7 overflow-hidden'>
       <Navbar />
       <Hero />
       <About />
